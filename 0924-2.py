@@ -179,11 +179,9 @@ def calculate_dice_rotation(dice):
     if width < height:
         angle = angle + 90.0
 
-    while angle > 90:
-        angle -= 180
-
-    while angle < -90:
-        angle += 180
+    angle = abs(angle) 
+    if angle > 90:
+        angle = 180 - angle
 
     return angle
 
